@@ -14,66 +14,107 @@
 
 <body>
 
-
     <div class="container">
 
-        <div class="theader"></div>
-        <!-- 中间二维码内容 -->
+        <!-- 头部搜索框 -->
+        <div class="header">
+
+            <div class="header-inp">
+                <input placeholder-class="placeholderStyle" placeholder="输入车牌号码/司机名称搜索"></input>
+            </div>
+
+            <div class="hader-pick">
+                <image src="../../images/1_8.png"></image>
+            </div>
+        </div>
+
+
+        <!-- 内容 -->
         <div class="content">
-
-            <div class="content-header">
-
-                <div class="content-hedear-left">
-                    排队动态二维码
-                </div>
-
-                <div class="content-header-right">
-                    A园区
-                </div>
+            <div class="content-title">
+                2019-10-22
             </div>
 
-            <!-- 二维码 -->
-            <div class="content-qrcode">
+            <div class="content-con">
+                <div class="content-con-item">
+                    <div class="item-con">
+                        <div class="item-con-left">
+                            <text>车牌号码：</text>
+                            <span>粤B466S1</span>
+                        </div>
 
-                <canvas class='canvas' canvas-id='canvas' style="width: 100%;height: 100%" bindlongtap="save"></canvas>
+                        <div class="item-con-right">
+                            <text>司机姓名：</text>
+                            <span>李亚伟</span>
+                        </div>
+                    </div>
+                    <div class="item-con">
+                        <text>联系电话：</text>
+                        <span>18977889900</span>
+                    </div>
 
-            </div>
 
-            <!-- 点击刷新二维码 -->
-            <div class="content-refresh" bindtap="refresh">
+                    <div class="item-con">
+                        <text>排队时间：</text>
+                        <span>2019-09-09 11:30:20</span>
+                    </div>
+                    <div class="item-con">
+                        <text>进场时间：</text>
+                        <span>2019-09-09 11:30:20</span>
+                    </div>
+                    <div class="item-con">
+                        <div class="item-con-left">
+                            <text>出场时间：</text>
+                            <span>2019-09-09 11:30:20</span>
+                        </div>
 
-                <div class="content-refresh-image">
-                    <image src="../../images/1_6.png"></image>
+                        <div class="item-con-right">
+                            <text>等待时长：</text>
+                            <span>60分钟</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="content-refresh-text">排队码自动
-                    <text>刷新</text>
-                </div>
-            </div>
+                <div class="content-con-item">
+                    <div class="item-con">
+                        <div class="item-con-left">
+                            <text>车牌号码：</text>
+                            <span>粤B466S1</span>
+                        </div>
+
+                        <div class="item-con-right">
+                            <text>司机姓名：</text>
+                            <span>李亚伟</span>
+                        </div>
+                    </div>
+                    <div class="item-con">
+                        <text>联系电话：</text>
+                        <span>18977889900</span>
+                    </div>
 
 
-            <!-- 点击切换出库入库二维码-->
+                    <div class="item-con">
+                        <text>排队时间：</text>
+                        <span>2019-09-09 11:30:20</span>
+                    </div>
+                    <div class="item-con">
+                        <text>进场时间：</text>
+                        <span>2019-09-09 11:30:20</span>
+                    </div>
+                    <div class="item-con">
+                        <div class="item-con-left">
+                            <text>出场时间：</text>
+                            <span>2019-09-09 11:30:20</span>
+                        </div>
 
-            <div class="content-bottom">
-                <div class="yxz">
-                    出库排队
-                </div>
-                <div class="wxz">
-                    入库排队
+                        <div class="item-con-right">
+                            <text>等待时长：</text>
+                            <span>60分钟</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-        <!-- 查看排队情况 -->
-        <div class="situation">
-            查看排队情况
-        </div>
-
-        <div class="record" >
-            查看排队纪录
-        </div>
-
 
     </div>
 
