@@ -8,7 +8,7 @@ var Global = {};
 
 	/**
 	 * 异步获取模板并渲染模板
-	 * @param  string   url      模板路径 
+	 * @param  string   url      模板路径
 	 * @param  object   opts     JSON数据源
 	 * @param  function callback 获取模板后的回调函数
 	 * @return null
@@ -34,9 +34,9 @@ var Global = {};
 				callback(template);
 
 				tempCache[url] = res;
-				
+
 			}, function(res) {
-				alert('请求模板出错：' + res.status);
+
 			});
 		}
 
@@ -49,28 +49,30 @@ var Global = {};
 	 *return string 参数值
 	 */
 	Global.getUrlParam = function(name) {
-			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-			var r = window.location.search.substr(1).match(reg); //匹配目标参数
-			if (r != null) return unescape(r[2]);
-			return null; //返回参数值
-		},
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+		var r = window.location.search.substr(1).match(reg); //匹配目标参数
+		if (r != null) return unescape(r[2]);
+		return null; //返回参数值
+	}
 
-		/**
-		 * 动态添加样式表文件
-		 * @param string 		url      	样式表文件地址
-		 * @param string 		position 	样式表文件插到页面位置
-		 */
-		Global.addLink = function(url, id, position) {
 
-			if (!url) return;
-			if (!id) return;
 
-			var position = position || 'head';
+	/**
+	 * 动态添加样式表文件
+	 * @param string 		url      	样式表文件地址
+	 * @param string 		position 	样式表文件插到页面位置
+	 */
+	Global.addLink = function(url, id, position) {
 
-			var link = $('<link id="' + id + '" href="' + url + '" rel="stylesheet" type="text/css">');
+		if (!url) return;
+		if (!id) return;
 
-			$(position).append(link);
-		}
+		var position = position || 'head';
+
+		var link = $('<link id="' + id + '" href="' + url + '" rel="stylesheet" type="text/css">');
+
+		$(position).append(link);
+	}
 
 	/**
 	 * 动态添加js文件
@@ -98,13 +100,13 @@ var Global = {};
 		var validate = null;
 		var validField = null; // 需要验证的表单域的JQ对象
 		var element = $(element);
-		var validateDom = 'select[data-validateInfor],textarea[data-validateInfor],input[data-validateInfor]'
+		var validateDom =
+			'div[data-validateInfor],select[data-validateInfor],textarea[data-validateInfor],input[data-validateInfor]';
 		validate = new Validate();
 		validField = element.find(validateDom);
 
 		// 循环需要验证的字段
 		for (var i = 0, len = validField.length; i < len; i++) {
-
 			var valideArr = $(validField[i]).attr('data-validateInfor').split('|');
 			var valideRes = [];
 
@@ -138,21 +140,15 @@ var Global = {};
 				return true;
 			}
 		} else if (typeof msg !== 'undefined') {
-
-			// 弹出验证信息
-			/*layui.layer.msg(msg);*/
-
-            // layui.layer.msg(msg, {icon: 5,anim: 6});
-			common.ordinaryAlert({
-				title:'温馨提示',
-				mask:true,
-				content:msg
+			common.alert({
+				mask: true,
+				content: msg
 			});
 			return false;
 		}
 
 		return true;
-	}
+	};
 
 	/**
 	 * 获取指定容器的所有字段数据
@@ -167,7 +163,7 @@ var Global = {};
 		//  获取的表单域所有元素名
 		var fieldTagName = 'input,textarea,select';
 
-		// 获取表单域的type值 
+		// 获取表单域的type值
 		var field = ['text', 'password', 'hidden', 'file', 'textarea', 'select'];
 		var allField = element.find(fieldTagName);
 
@@ -189,7 +185,7 @@ var Global = {};
 			}
 		}
 
-		// 收集radio表单域 
+		// 收集radio表单域
 		if (radios.length > 0) {
 			for (var i = 0, len = radios.length; i < len; i++) {
 				if (radios.eq(i).is(':checked')) {
@@ -198,7 +194,7 @@ var Global = {};
 			}
 		}
 
-		// 收集checkbox表单域 
+		// 收集checkbox表单域
 		if (checkboxs.length > 0) {
 			var checkboxCache = {};
 			for (var i = 0, len = checkboxs.length; i < len; i++) {
@@ -329,4 +325,49 @@ var Global = {};
 		}
 	}
 
-})(jQuery)
+	/**
+	 * 加载图片
+	 * @param  object 	dom 	dom元素
+	 * @return null
+	 */
+	Global.loadImage = function(src, callback) {
+		var image = new Image();
+		image.onload = function() {
+			if (typeof callback !== 'undefined') {
+				callback();
+			}
+		};
+		image.src = src;
+	}
+
+})(jQuery);
+
+/*ajax请求方法
+ * type   类型
+ * url   接口url
+ * data 数据
+ * callbackSuc  成功回调
+ * callbackErr  失败回调
+ *
+ *
+ * */
+function getData(type, url, data, callbackSuc, callbackErr) {
+	$.ajax({
+		type: type,
+		url: url,
+		data: data,
+		dataType: "json",
+		header: {
+			Authorization: '1111',
+		},
+		success: function(res) {
+			callbackSuc(res);
+		},
+		error: function(res) {
+			common.alert({
+				mask: true,
+				content: res.msg
+			})
+		}
+	});
+}
