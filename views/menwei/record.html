@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=750, user-scalable=no">
+    <link rel="stylesheet" href="../../css/record.css">
+
+    <script src="../../js/lib/jquery-2.2.2.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="theader"></div>
+        <!-- 中间二维码内容 -->
+        <div class="content">
+
+            <div class="content-header">
+
+                <div class="content-hedear-left">
+                    排队动态二维码
+                </div>
+
+                <div class="content-header-right">
+                    A园区
+                </div>
+            </div>
+
+            <!-- 二维码 -->
+            <div class="content-qrcode">
+
+                <canvas class='canvas' canvas-id='canvas' style="width: 100%;height: 100%" bindlongtap="save"></canvas>
+
+            </div>
+
+            <!-- 点击刷新二维码 -->
+            <div class="content-refresh" bindtap="refresh">
+
+                <div class="content-refresh-image">
+                    <image src="../../images/1_6.png"></image>
+                </div>
+
+                <div class="content-refresh-text">排队码自动
+                    <text>刷新</text>
+                </div>
+            </div>
+
+
+            <!-- 点击切换出库入库二维码-->
+
+            <div class="content-bottom">
+                <div class="yxz">
+                    出库排队
+                </div>
+                <div class="wxz">
+                    入库排队
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 查看排队情况 -->
+        <div class="situation">
+            查看排队情况
+        </div>
+
+        <div class="record" >
+            查看排队纪录
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
