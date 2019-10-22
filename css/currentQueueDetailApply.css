@@ -1,0 +1,184 @@
+body,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  color: #333;
+  font: normal normal normal 28px/40px 'Microsoft YaHei', Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz--tap-highlight-color: rgba(0, 0, 0, 0);
+  -o--tap-highlight-color: rgba(0, 0, 0, 0);
+}
+img {
+  border: 0;
+}
+input[type="text"],
+input[type="password"],
+textarea,
+button {
+  vertical-align: middle;
+  -webkit-appearance: none;
+  font-family: 'Microsoft YaHei', Arial, sans-serif;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-input-placeholder {
+  color: #999;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+table {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table td {
+  padding: 0;
+}
+textarea {
+  resize: none;
+}
+body {
+  margin: 0 auto;
+  position: relative;
+}
+.clearFix:before,
+.clearFix:after {
+  content: " ";
+  display: table;
+}
+.clearFix:after {
+  clear: both;
+}
+.pullLeft {
+  float: left;
+}
+.pullRight {
+  float: right;
+}
+.textCenter {
+  text-align: center;
+}
+.textRight {
+  text-align: right;
+}
+.ellipsisNormal {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  padding-bottom: 150px;
+}
+.relation-form-wrap {
+  padding-top: 30px;
+  width: 637px;
+  margin: 0 auto;
+}
+.relation-title {
+  color: #333;
+  padding-left: 22px;
+  border-left: 5px solid #ff8402;
+}
+.relation-form {
+  margin-top: 36px;
+}
+.form-item {
+  width: 100%;
+  height: 72px;
+  line-height: 72px;
+  border-top: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+  display: flex;
+}
+.form-item:last-child {
+  border-bottom: 1px solid #ededed;
+}
+.form-title {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  font-size: 26px;
+  background-color: #ededed;
+  color: #999;
+}
+.form-content {
+  width: 410px;
+  text-align: left;
+  font-size: 26px;
+  color: #333;
+  padding-left: 26px;
+  display: flex;
+}
+.more {
+  color: #ff8402;
+  width: 360px;
+}
+.more-icon {
+  float: right;
+  font-size: 34px;
+  margin-right: 25px;
+}
+.confirm-wrap {
+  width: 100%;
+  height: 98px;
+  box-shadow: 0 -10px 10px #f3f3f3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.confirm-btn {
+  width: 350px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+  border-radius: 35px;
+}
+.confirm-entrucking {
+  background-color: #ff8500;
+}
+.confirm-service {
+  color: #ff8500;
+  border: 1px solid #ff8500;
+  background-color: transparent;
+}
